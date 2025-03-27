@@ -97,7 +97,11 @@ export default function Menu({ isOpen, onClose }: MenuProps) {
             fontSize: '32px',
             letterSpacing: '0.05em',
             color: '#000000',
-            fontFamily: 'Georgia, serif'
+            fontFamily: 'Georgia, serif',
+            background: 'none',
+            border: 'none',
+            padding: 0,
+            cursor: 'pointer'
           }}
         >
           Close
