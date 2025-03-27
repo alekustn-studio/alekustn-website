@@ -1,12 +1,22 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Tailwind */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  font-size: 16px;
-}
-
-html {
   font-size: 16px;
 }
 
