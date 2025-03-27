@@ -4,6 +4,9 @@ const nextConfig = {
     domains: ['picsum.photos'],
     unoptimized: true
   },
+  experimental: {
+    appDir: true
+  },
   webpack: (config) => {
     config.module.rules.push({
       test: /\.css$/,
