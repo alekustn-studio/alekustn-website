@@ -15,6 +15,9 @@
   font-size: 16px !important;
   -webkit-text-size-adjust: 100% !important;
   text-size-adjust: 100% !important;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -23,6 +26,7 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 /* Tailwind */
@@ -30,4 +34,10 @@ body {
 @tailwind components;
 @tailwind utilities;
 
-/* Добавь сюда любые кастомные стили */ 
+/* Добавь сюда любые кастомные стили */
+
+/* Custom classes */
+.text-menu {
+  font-size: 32px;
+  letter-spacing: 0.05em;
+} 
