@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  output: 'standalone',  // возвращаем обратно
   images: {
     domains: ['picsum.photos'],
     unoptimized: true
