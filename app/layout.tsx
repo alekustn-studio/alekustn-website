@@ -1,5 +1,4 @@
-import './globals.css';
-import './styles.css';
+import '../styles/globals.css';
 import Header from '../components/Header';
 import type { Metadata } from 'next';
 
@@ -14,11 +13,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body style={{ fontFamily: 'Georgia, serif' }}>
+    <html lang="en" className="h-full">
+      <body className="h-full font-['Georgia']">
         <Header />
         {children}
       </body>
     </html>
   );
-} 
+}
