@@ -11,13 +11,7 @@
 }
 
 /* Base styles */
-:root {
-  font-size: 16px !important;
-  -webkit-text-size-adjust: 100% !important;
-  text-size-adjust: 100% !important;
-}
-
-html {
+:root, html {
   font-size: 16px !important;
   -webkit-text-size-adjust: 100% !important;
   text-size-adjust: 100% !important;

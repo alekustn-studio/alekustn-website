@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { CSSProperties } from 'react';
 
 interface MenuProps {
   isOpen: boolean;
@@ -13,86 +14,177 @@ export default function Menu({ isOpen, onClose }: MenuProps) {
   const [message, setMessage] = useState('');
 
   useEffect(() => {
-    if (isOpen) document.body.style.overflow = 'hidden';
-    return () => { document.body.style.overflow = 'unset'; };
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
   }, [isOpen]);
+
+  const commonLinkStyles: CSSProperties = {
+    position: 'relative',
+    fontSize: '32px',
+    letterSpacing: '0.05em',
+    color: '#000000',
+    background: 'none',
+    border: 'none',
+    padding: 0,
+    cursor: 'pointer',
+    fontWeight: '400',
+    display: 'block',
+    marginBottom: '24px'
+  };
+
+  const bigLinkStyles: CSSProperties = {
+    ...commonLinkStyles,
+    fontSize: '60px',
+    marginBottom: '32px',
+    letterSpacing: '0.02em'
+  };
 
   const handleSubscribe = async () => {
     try {
-      const res = await fetch('/api/subscribe', {
+      const response = await fetch('/api/subscribe', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email })
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
       });
-      if (res.ok) {
+
+      if (response.ok) {
         setMessage('Thank you for subscribing!');
-        setEmail('');
+        setEmail(''); // очищаем поле
+        // Убираем сообщение через 3 секунды
         setTimeout(() => setMessage(''), 3000);
       } else {
         setMessage('Subscription error');
         setTimeout(() => setMessage(''), 3000);
       }
-    } catch {
+    } catch (error) {
       setMessage('Subscription error');
       setTimeout(() => setMessage(''), 3000);
     }
   };
 
   return (
-    <div className={`fixed top-0 right-0 bottom-0 w-full max-w-[600px] bg-white/70 backdrop-blur-sm z-50 transition-all duration-300 ${isOpen ? 'translate-x-0 opacity-100 pointer-events-auto' : 'translate-x-full opacity-0 pointer-events-none'}`}>
-      <button
-        onClick={onClose}
-        className="absolute top-8 right-8 text-2xl font-serif hover:opacity-70"
-      >
-        Close
-      </button>
+    <div 
+      style={{
+        transform: isOpen ? 'translateX(0)' : 'translateX(100%)',
+        transition: 'all 0.3s ease-in-out',
+        position: 'fixed',
+        top: 0,
+        right: 0,
+        bottom: 0,
+        width: '100%',
+        maxWidth: '600px',
+        backgroundColor: 'rgba(255, 255, 255, 0.65)',
+        backdropFilter: 'blur(5px)',
+        WebkitBackdropFilter: 'blur(5px)',
+        zIndex: 50,
+        opacity: isOpen ? 1 : 0,
+        pointerEvents: isOpen ? 'auto' : 'none'
+      }}
+    >
+      <div style={{ position: 'absolute', top: '32px', right: '32px' }}>
+        <button
+          onClick={onClose}
+          style={{
+            position: 'absolute',
+            ...commonLinkStyles,
+            right: 0
+          }}
+        >
+          Close
+        </button>
+      </div>
 
-      <div className="absolute top-[120px] left-8 right-8">
-        <nav className="flex flex-col max-w-[300px] mt-[60px]">
-          {['Products', 'Prints', 'About'].map((item) => (
-            <Link
-              key={item}
-              href={`/${item.toLowerCase()}`}
-              className="text-5xl font-normal mb-8 font-serif hover:opacity-70 no-underline"
-            >
-              {item}
-            </Link>
-          ))}
+      <div style={{ position: 'absolute', top: '120px', left: '32px', right: '32px' }}>
+        <nav style={{ display: 'flex', flexDirection: 'column', maxWidth: '300px' }}>
+          <div style={{ marginTop: '60px' }}>
+            {['Products', 'Prints', 'About'].map((item) => (
+              <Link
+                key={item}
+                href={`/${item.toLowerCase()}`}
+                style={bigLinkStyles}
+                className="hover:opacity-70 transition-opacity no-underline"
+              >
+                {item}
+              </Link>
+            ))}
+          </div>
         </nav>
 
-        <div className="mt-8">
+        <div style={{ marginTop: '32px' }}>
           <input
             type="email"
-            placeholder={message || 'Enter your email'}
+            placeholder={message || "Enter your email"}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full bg-transparent border-b border-black text-black text-2xl py-4 outline-none font-inherit"
+            style={{
+              width: '100%',
+              padding: '16px 0',
+              border: 'none',
+              borderBottom: '1px solid black',
+              outline: 'none',
+              color: 'black',
+              fontSize: '24px',
+              fontFamily: 'inherit',
+              background: 'none'
+            }}
           />
           <button
             onClick={handleSubscribe}
-            className="w-full mt-4 bg-neutral-700 text-white text-2xl py-4 hover:opacity-80 transition-opacity font-inherit"
+            style={{
+              width: '100%',
+              marginTop: '16px',
+              padding: '16px 0',
+              backgroundColor: 'rgba(80, 80, 80, 0.95)',
+              color: 'white',
+              border: 'none',
+              fontSize: '24px',
+              cursor: 'pointer',
+              transition: 'opacity 0.2s ease-in-out',
+              fontFamily: 'inherit'
+            }}
+            className="hover:opacity-80"
           >
             Subscribe
           </button>
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-8">
+      {/* Социальные сети и копирайт внизу */}
+      <div style={{ 
+        position: 'fixed',
+        bottom: '32px',
+        left: '32px'
+      }}>
         <Link
           href="https://x.com/ALEKUSTN"
+          style={commonLinkStyles}
+          className="hover:opacity-70 transition-opacity no-underline"
           target="_blank"
-          className="text-2xl mb-6 block font-serif hover:opacity-70"
         >
           Twitter
         </Link>
         <Link
           href="https://www.instagram.com/alekustn"
+          style={commonLinkStyles}
+          className="hover:opacity-70 transition-opacity no-underline"
           target="_blank"
-          className="text-2xl mb-6 block font-serif hover:opacity-70"
         >
           Instagram
         </Link>
-        <div className="mt-8 text-2xl text-gray-600">© ALEKUSTN - 2025</div>
+        <div style={{ 
+          marginTop: '32px',
+          fontSize: '32px',
+          color: '#444444',
+          opacity: 1
+        }}>
+          © ALEKUSTN - 2025
+        </div>
       </div>
     </div>
   );
