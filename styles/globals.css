@@ -1,23 +1,39 @@
+/* Normalize.css */
+@import-normalize;
+
 /* Reset */
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html,
+/* Base styles */
+:root {
+  font-size: 16px !important;
+  -webkit-text-size-adjust: 100% !important;
+  text-size-adjust: 100% !important;
+}
+
+html {
+  font-size: 16px !important;
+  -webkit-text-size-adjust: 100% !important;
+  text-size-adjust: 100% !important;
+}
+
 body {
-  font-size: 16px;
+  font-family: 'Georgia, serif';
+  font-size: 16px !important;
   line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Tailwind */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  font-size: 16px;
-}
 
 /* Добавь сюда любые кастомные стили */ 
