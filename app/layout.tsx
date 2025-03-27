@@ -16,8 +16,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="h-full">
-      <body className="h-full font-['Georgia']">
+    <html lang="en" style={{ fontSize: '16px' }}>
+      <body style={{ fontFamily: 'Georgia, serif', fontSize: '16px' }}>
         <Header />
         {children}
       </body>
