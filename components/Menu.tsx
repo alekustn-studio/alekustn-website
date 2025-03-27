@@ -91,9 +91,13 @@ export default function Menu({ isOpen, onClose }: MenuProps) {
         <button
           onClick={onClose}
           style={{
-            position: 'absolute',
-            ...commonLinkStyles,
-            right: 0
+            position: 'fixed',
+            top: '32px',
+            right: '32px',
+            fontSize: '32px',
+            letterSpacing: '0.05em',
+            color: '#000000',
+            fontFamily: 'Georgia, serif'
           }}
         >
           Close
