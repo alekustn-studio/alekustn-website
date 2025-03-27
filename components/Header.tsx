@@ -107,10 +107,22 @@ export default function Header() {
       </button>
 
       {/* Меню */}
-      <Menu 
-        isOpen={isMenuOpen} 
-        onClose={() => setIsMenuOpen(false)} 
-      />
+      <div 
+        style={{
+          position: 'fixed',
+          top: 0,
+          right: isMenuOpen ? '0' : '-100%',
+          width: '100%',
+          maxWidth: '600px',
+          height: '100%',
+          transition: 'right 0.3s ease-in-out'
+        }}
+      >
+        <Menu 
+          isOpen={isMenuOpen} 
+          onClose={() => setIsMenuOpen(false)} 
+        />
+      </div>
     </header>
   );
 } 
