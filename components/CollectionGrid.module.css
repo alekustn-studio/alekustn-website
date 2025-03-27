@@ -1,0 +1,35 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 колонки для мобильных */
+  gap: 12px;
+  padding: 12px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Планшеты */
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    padding: 14px;
+  }
+}
+
+/* Десктопы */
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 16px;
+    padding: 16px;
+  }
+}
+
+/* Большие экраны */
+@media (min-width: 1280px) {
+  .grid {
+    grid-template-columns: repeat(8, 1fr);
+    gap: 16px;
+    padding: 16px;
+  }
+} 
