@@ -1,10 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'standalone',
+  output: 'export',
   images: {
-    domains: ['picsum.photos'], // Разрешаем загрузку изображений с picsum.photos
+    domains: ['picsum.photos'],
     unoptimized: true
   },
 }
 
-module.exports = nextConfig 
+module.exports = nextConfig
