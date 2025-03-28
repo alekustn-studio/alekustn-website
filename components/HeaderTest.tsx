@@ -8,19 +8,53 @@ export default function HeaderTest() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-8 left-0 right-0 px-5 flex justify-between items-center bg-white z-[1000]">
-      <Link href="/" className="text-2xl font-['Georgia'] tracking-wide hover:opacity-70 transition-all">
+    <header style={{
+      padding: '0 20px',
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      position: 'fixed',
+      top: '32px',
+      left: '0',
+      right: '0',
+      backgroundColor: '#fff',
+      zIndex: 1000
+    }}>
+      <Link 
+        href="/"
+        style={{
+          fontSize: '16px',
+          letterSpacing: '0.05em',
+          color: '#000000'
+        }}
+      >
         ALEKUSTN
       </Link>
 
       <button
         onClick={() => setIsMenuOpen(true)}
-        className="text-2xl font-['Georgia'] tracking-wide hover:opacity-70 transition-all"
+        style={{
+          fontSize: '16px',
+          letterSpacing: '0.05em',
+          color: '#000000',
+          background: 'none',
+          border: 'none',
+          padding: 0,
+          cursor: 'pointer'
+        }}
       >
         Menu
       </button>
 
-      <div className={`fixed top-0 right-0 w-full max-w-[600px] h-full transition-all duration-300 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+      <div style={{
+        position: 'fixed',
+        top: 0,
+        right: isMenuOpen ? 0 : '-100%',
+        width: '100%',
+        maxWidth: '600px',
+        height: '100%',
+        transition: 'right 0.3s ease-in-out'
+      }}>
         <MenuTest onClose={() => setIsMenuOpen(false)} />
       </div>
     </header>

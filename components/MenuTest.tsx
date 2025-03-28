@@ -8,56 +8,124 @@ interface MenuTestProps {
 
 export default function MenuTest({ onClose }: MenuTestProps) {
   return (
-    <div className="fixed top-0 right-0 bottom-0 w-full max-w-[600px] bg-white/70 backdrop-blur-sm z-50">
+    <div style={{
+      position: 'fixed',
+      top: 0,
+      right: 0,
+      bottom: 0,
+      width: '100%',
+      maxWidth: '600px',
+      backgroundColor: 'rgba(255, 255, 255, 0.7)',
+      backdropFilter: 'blur(8px)',
+      zIndex: 50
+    }}>
       <button
         onClick={onClose}
-        className="absolute top-8 right-8 text-2xl font-['Georgia'] tracking-wide hover:opacity-70 transition-all"
+        style={{
+          position: 'fixed',
+          top: '32px',
+          right: '32px',
+          fontSize: '16px',
+          letterSpacing: '0.05em',
+          color: '#000000',
+          background: 'none',
+          border: 'none',
+          padding: 0,
+          cursor: 'pointer'
+        }}
       >
         Close
       </button>
 
-      <div className="absolute top-[120px] left-8 right-8">
-        <nav className="flex flex-col max-w-[300px] mt-[60px] space-y-8">
+      <div style={{
+        position: 'absolute',
+        top: '120px',
+        left: '32px',
+        right: '32px'
+      }}>
+        <nav style={{
+          display: 'flex',
+          flexDirection: 'column',
+          maxWidth: '300px',
+          marginTop: '60px'
+        }}>
           {['Products', 'Prints', 'About'].map((item) => (
             <Link
               key={item}
               href={`/${item.toLowerCase()}`}
-              className="text-4xl font-['Georgia'] tracking-wide hover:opacity-70 transition-all"
+              style={{
+                fontSize: '32px',
+                marginBottom: '32px',
+                letterSpacing: '0.05em',
+                color: '#000000'
+              }}
             >
               {item}
             </Link>
           ))}
         </nav>
 
-        <div className="mt-16">
+        <div style={{ marginTop: '64px' }}>
           <input
             type="email"
             placeholder="Enter your email"
-            className="w-full bg-transparent border-b border-black text-xl py-4 font-['Georgia'] outline-none"
+            style={{
+              width: '100%',
+              background: 'transparent',
+              borderBottom: '1px solid black',
+              fontSize: '16px',
+              padding: '16px 0',
+              outline: 'none'
+            }}
           />
           <button
-            className="w-full mt-4 bg-neutral-700 text-white text-xl py-4 font-['Georgia'] hover:opacity-80 transition-all"
+            style={{
+              width: '100%',
+              marginTop: '16px',
+              background: '#404040',
+              color: 'white',
+              fontSize: '16px',
+              padding: '16px 0'
+            }}
           >
             Subscribe
           </button>
         </div>
 
-        <div className="absolute bottom-8 left-0">
+        <div style={{
+          position: 'absolute',
+          bottom: '32px',
+          left: 0
+        }}>
           <Link
             href="https://x.com/ALEKUSTN"
             target="_blank"
-            className="text-xl font-['Georgia'] tracking-wide block mb-6 hover:opacity-70 transition-all"
+            style={{
+              fontSize: '16px',
+              marginBottom: '24px',
+              display: 'block'
+            }}
           >
             Twitter
           </Link>
           <Link
             href="https://www.instagram.com/alekustn"
             target="_blank"
-            className="text-xl font-['Georgia'] tracking-wide block mb-6 hover:opacity-70 transition-all"
+            style={{
+              fontSize: '16px',
+              marginBottom: '24px',
+              display: 'block'
+            }}
           >
             Instagram
           </Link>
-          <div className="mt-8 text-xl text-gray-600">© ALEKUSTN - 2025</div>
+          <div style={{
+            marginTop: '32px',
+            fontSize: '16px',
+            color: '#666666'
+          }}>
+            © ALEKUSTN - 2025
+          </div>
         </div>
       </div>
     </div>
