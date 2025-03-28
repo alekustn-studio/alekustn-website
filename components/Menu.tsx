@@ -46,38 +46,33 @@ export default function Menu({ onClose, isOpen }: MenuProps) {
 
       <nav style={{
         position: 'absolute',
-        top: '140px',
-        left: '32px',
-        display: 'flex',
-        flexDirection: 'column',
-        maxWidth: '300px'
+        top: '100px',
+        left: '32px'
       }}>
-        <div style={{ marginTop: '60px' }}>
-          {['Products', 'Prints', 'About'].map((item) => (
-            <Link
-              key={item}
-              href={`/${item.toLowerCase()}`}
-              style={{
-                display: 'block',
-                fontSize: '42px',
-                marginBottom: '24px',
-                letterSpacing: '0.05em',
-                color: '#000000',
-                fontFamily: 'Georgia, serif',
-                transition: 'opacity 0.3s ease'
-              }}
-              onMouseEnter={e => e.currentTarget.style.opacity = '0.7'}
-              onMouseLeave={e => e.currentTarget.style.opacity = '1'}
-            >
-              {item}
-            </Link>
-          ))}
-        </div>
+        {['Products', 'Prints', 'About'].map((item) => (
+          <Link
+            key={item}
+            href={`/${item.toLowerCase()}`}
+            style={{
+              display: 'block',
+              fontSize: '42px',
+              marginBottom: '24px',
+              letterSpacing: '0.05em',
+              color: '#000000',
+              fontFamily: 'Georgia, serif',
+              transition: 'opacity 0.3s ease'
+            }}
+            onMouseEnter={e => e.currentTarget.style.opacity = '0.7'}
+            onMouseLeave={e => e.currentTarget.style.opacity = '1'}
+          >
+            {item}
+          </Link>
+        ))}
       </nav>
 
       <div style={{
         position: 'absolute',
-        bottom: '32px',
+        bottom: '120px',
         left: '32px',
         width: 'calc(100% - 64px)'
       }}>
