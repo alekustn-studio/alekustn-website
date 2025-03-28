@@ -29,7 +29,8 @@ export default function MenuTest({ onClose }: MenuTestProps) {
           color: '#000000',
           background: 'none',
           border: 'none',
-          cursor: 'pointer'
+          cursor: 'pointer',
+          fontFamily: 'Georgia, serif'
         }}
       >
         Close
@@ -49,7 +50,8 @@ export default function MenuTest({ onClose }: MenuTestProps) {
               fontSize: '32px',
               marginBottom: '32px',
               letterSpacing: '0.05em',
-              color: '#000000'
+              color: '#000000',
+              fontFamily: 'Georgia, serif'
             }}
           >
             {item}
@@ -60,7 +62,8 @@ export default function MenuTest({ onClose }: MenuTestProps) {
       <div style={{
         position: 'absolute',
         bottom: '32px',
-        left: '32px'
+        left: '32px',
+        width: 'calc(100% - 64px)'
       }}>
         <input
           type="email"
@@ -71,17 +74,24 @@ export default function MenuTest({ onClose }: MenuTestProps) {
             borderBottom: '1px solid black',
             fontSize: '16px',
             padding: '16px 0',
-            outline: 'none'
+            outline: 'none',
+            fontFamily: 'Georgia, serif',
+            borderTop: 'none',
+            borderLeft: 'none',
+            borderRight: 'none'
           }}
         />
         <button
           style={{
             width: '100%',
             marginTop: '16px',
-            background: '#404040',
+            background: '#333333',
             color: 'white',
             fontSize: '16px',
-            padding: '16px 0'
+            padding: '16px 0',
+            fontFamily: 'Georgia, serif',
+            border: 'none',
+            cursor: 'pointer'
           }}
         >
           Subscribe
@@ -94,7 +104,9 @@ export default function MenuTest({ onClose }: MenuTestProps) {
             style={{
               display: 'block',
               fontSize: '16px',
-              marginBottom: '24px'
+              marginBottom: '24px',
+              color: '#000000',
+              fontFamily: 'Georgia, serif'
             }}
           >
             Twitter
@@ -105,14 +117,17 @@ export default function MenuTest({ onClose }: MenuTestProps) {
             style={{
               display: 'block',
               fontSize: '16px',
-              marginBottom: '24px'
+              marginBottom: '24px',
+              color: '#000000',
+              fontFamily: 'Georgia, serif'
             }}
           >
             Instagram
           </Link>
           <div style={{
             fontSize: '16px',
-            color: '#666666'
+            color: '#666666',
+            fontFamily: 'Georgia, serif'
           }}>
             © ALEKUSTN - 2025
           </div>

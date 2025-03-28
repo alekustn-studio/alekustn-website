@@ -24,7 +24,8 @@ export default function HeaderTest() {
         style={{
           fontSize: '16px',
           letterSpacing: '0.05em',
-          color: '#000000'
+          color: '#000000',
+          fontFamily: 'Georgia, serif'
         }}
       >
         ALEKUSTN
@@ -38,13 +39,24 @@ export default function HeaderTest() {
           color: '#000000',
           background: 'none',
           border: 'none',
-          cursor: 'pointer'
+          cursor: 'pointer',
+          fontFamily: 'Georgia, serif'
         }}
       >
         Menu
       </button>
 
-      {isMenuOpen && <MenuTest onClose={() => setIsMenuOpen(false)} />}
+      <div style={{
+        position: 'fixed',
+        top: 0,
+        right: 0,
+        width: '600px',
+        height: '100%',
+        transform: isMenuOpen ? 'translateX(0)' : 'translateX(100%)',
+        transition: 'transform 0.3s ease-in-out'
+      }}>
+        {isMenuOpen && <MenuTest onClose={() => setIsMenuOpen(false)} />}
+      </div>
     </header>
   );
 } 
