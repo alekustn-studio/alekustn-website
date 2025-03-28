@@ -1,7 +1,6 @@
 'use client'
 
 import { ReactNode } from 'react';
-import Header from '@/components/Header';
 import Head from 'next/head'
 
 type PageLayoutProps = {
@@ -16,7 +15,6 @@ export default function PageLayout({ children }: PageLayoutProps) {
           text-decoration: none;
         }
       `}</style>
-      <Header />  {/* Добавляем хедер здесь */}
       <div style={{ marginTop: '80px' }}>
         {children}
       </div>
