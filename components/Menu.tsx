@@ -13,7 +13,7 @@ export default function Menu({ onClose, isOpen }: MenuProps) {
       position: 'fixed',
       top: 0,
       right: 0,
-      width: '500px',
+      width: '450px',
       height: '100%',
       backgroundColor: 'rgba(255, 255, 255, 0.7)',
       backdropFilter: 'blur(8px)',
@@ -72,7 +72,7 @@ export default function Menu({ onClose, isOpen }: MenuProps) {
 
       <div style={{
         position: 'absolute',
-        bottom: '32px',
+        bottom: '80px',
         left: '32px',
         width: 'calc(100% - 64px)'
       }}>
