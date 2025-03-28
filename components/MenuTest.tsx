@@ -22,9 +22,9 @@ export default function MenuTest({ onClose }: MenuTestProps) {
         onClick={onClose}
         style={{
           position: 'absolute',
-          top: '32px',
+          top: '34px',
           right: '32px',
-          fontSize: '20px',
+          fontSize: '22px',
           letterSpacing: '0.05em',
           color: '#000000',
           background: 'none',

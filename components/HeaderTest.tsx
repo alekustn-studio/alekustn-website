@@ -22,7 +22,7 @@ export default function HeaderTest() {
       <Link 
         href="/"
         style={{
-          fontSize: '20px',
+          fontSize: '22px',
           letterSpacing: '0.05em',
           color: '#000000',
           fontFamily: 'Georgia, serif',
@@ -37,7 +37,7 @@ export default function HeaderTest() {
       <button
         onClick={() => setIsMenuOpen(true)}
         style={{
-          fontSize: '20px',
+          fontSize: '22px',
           letterSpacing: '0.05em',
           color: '#000000',
           background: 'none',
