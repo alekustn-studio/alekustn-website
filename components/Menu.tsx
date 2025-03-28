@@ -72,7 +72,7 @@ export default function Menu({ onClose, isOpen }: MenuProps) {
 
       <div style={{
         position: 'absolute',
-        bottom: '180px',
+        bottom: '220px',
         left: '32px',
         width: 'calc(100% - 64px)'
       }}>
