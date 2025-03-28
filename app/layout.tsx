@@ -1,6 +1,6 @@
-import '../styles/globals.css';
-import Header from '../components/Header';
-import type { Metadata } from 'next';
+import type { Metadata } from 'next'
+import './globals.css'
+import HeaderTest from '@/components/HeaderTest'
 
 export const metadata: Metadata = {
   title: 'ALEKUSTN | Home',
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     maximumScale: 1,
     userScalable: false
   }
-};
+}
 
 export default function RootLayout({
   children,
@@ -19,11 +19,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" style={{ fontSize: '16px' }}>
-      <body style={{ fontFamily: 'Georgia, serif', fontSize: '16px' }}>
-        <Header />
+    <html lang="en">
+      <body>
+        <HeaderTest />
         {children}
       </body>
     </html>
-  );
+  )
 }
