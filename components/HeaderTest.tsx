@@ -9,7 +9,7 @@ export default function HeaderTest() {
 
   return (
     <header style={{
-      padding: '0 20px',
+      padding: '0 32px',
       display: 'flex',
       justifyContent: 'space-between',
       alignItems: 'center',
@@ -17,7 +17,6 @@ export default function HeaderTest() {
       top: '32px',
       left: '0',
       right: '0',
-      backgroundColor: '#fff',
       zIndex: 1000
     }}>
       <Link 
@@ -39,24 +38,13 @@ export default function HeaderTest() {
           color: '#000000',
           background: 'none',
           border: 'none',
-          padding: 0,
           cursor: 'pointer'
         }}
       >
         Menu
       </button>
 
-      <div style={{
-        position: 'fixed',
-        top: 0,
-        right: isMenuOpen ? 0 : '-100%',
-        width: '100%',
-        maxWidth: '600px',
-        height: '100%',
-        transition: 'right 0.3s ease-in-out'
-      }}>
-        <MenuTest onClose={() => setIsMenuOpen(false)} />
-      </div>
+      {isMenuOpen && <MenuTest onClose={() => setIsMenuOpen(false)} />}
     </header>
   );
 } 
