@@ -110,47 +110,52 @@ export default function Menu({ onClose, isOpen }: MenuProps) {
         >
           Subscribe
         </button>
+      </div>
 
-        <div style={{ marginTop: '64px' }}>
-          <Link
-            href="https://x.com/ALEKUSTN"
-            target="_blank"
-            style={{
-              display: 'block',
-              fontSize: '20px',
-              marginBottom: '16px',
-              color: '#000000',
-              fontFamily: 'Georgia, serif',
-              transition: 'opacity 0.3s ease'
-            }}
-            onMouseEnter={e => e.currentTarget.style.opacity = '0.7'}
-            onMouseLeave={e => e.currentTarget.style.opacity = '1'}
-          >
-            Twitter
-          </Link>
-          <Link
-            href="https://www.instagram.com/alekustn"
-            target="_blank"
-            style={{
-              display: 'block',
-              fontSize: '20px',
-              marginBottom: '16px',
-              color: '#000000',
-              fontFamily: 'Georgia, serif',
-              transition: 'opacity 0.3s ease'
-            }}
-            onMouseEnter={e => e.currentTarget.style.opacity = '0.7'}
-            onMouseLeave={e => e.currentTarget.style.opacity = '1'}
-          >
-            Instagram
-          </Link>
-          <div style={{
+      <div style={{
+        position: 'absolute',
+        bottom: '32px',
+        left: '32px',
+        width: 'calc(100% - 64px)'
+      }}>
+        <Link
+          href="https://x.com/ALEKUSTN"
+          target="_blank"
+          style={{
+            display: 'block',
             fontSize: '20px',
-            color: '#666666',
-            fontFamily: 'Georgia, serif'
-          }}>
-            © ALEKUSTN - 2025
-          </div>
+            marginBottom: '16px',
+            color: '#000000',
+            fontFamily: 'Georgia, serif',
+            transition: 'opacity 0.3s ease'
+          }}
+          onMouseEnter={e => e.currentTarget.style.opacity = '0.7'}
+          onMouseLeave={e => e.currentTarget.style.opacity = '1'}
+        >
+          Twitter
+        </Link>
+        <Link
+          href="https://www.instagram.com/alekustn"
+          target="_blank"
+          style={{
+            display: 'block',
+            fontSize: '20px',
+            marginBottom: '16px',
+            color: '#000000',
+            fontFamily: 'Georgia, serif',
+            transition: 'opacity 0.3s ease'
+          }}
+          onMouseEnter={e => e.currentTarget.style.opacity = '0.7'}
+          onMouseLeave={e => e.currentTarget.style.opacity = '1'}
+        >
+          Instagram
+        </Link>
+        <div style={{
+          fontSize: '20px',
+          color: '#666666',
+          fontFamily: 'Georgia, serif'
+        }}>
+          © ALEKUSTN - 2025
         </div>
       </div>
     </div>
