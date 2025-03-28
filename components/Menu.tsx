@@ -72,7 +72,7 @@ export default function Menu({ onClose, isOpen }: MenuProps) {
 
       <div style={{
         position: 'absolute',
-        bottom: '120px',
+        bottom: '100px',
         left: '32px',
         width: 'calc(100% - 64px)'
       }}>
@@ -83,7 +83,7 @@ export default function Menu({ onClose, isOpen }: MenuProps) {
             width: '100%',
             background: 'transparent',
             borderBottom: '1px solid black',
-            fontSize: '20px',
+            fontSize: '18px',
             padding: '16px 0',
             outline: 'none',
             fontFamily: 'Georgia, serif',
@@ -98,7 +98,7 @@ export default function Menu({ onClose, isOpen }: MenuProps) {
             marginTop: '16px',
             background: 'rgba(51, 51, 51, 0.8)',
             color: 'white',
-            fontSize: '20px',
+            fontSize: '18px',
             padding: '12px 0',
             fontFamily: 'Georgia, serif',
             border: 'none',
@@ -111,7 +111,12 @@ export default function Menu({ onClose, isOpen }: MenuProps) {
           Subscribe
         </button>
 
-        <div style={{ marginTop: '64px' }}>
+        <div style={{ 
+          position: 'absolute',
+          bottom: '-140px',
+          left: 0,
+          width: '100%'
+        }}>
           <Link
             href="https://x.com/ALEKUSTN"
             target="_blank"
