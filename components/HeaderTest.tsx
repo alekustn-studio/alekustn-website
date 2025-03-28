@@ -22,7 +22,7 @@ export default function HeaderTest() {
       <Link 
         href="/"
         style={{
-          fontSize: '24px',
+          fontSize: '20px',
           letterSpacing: '0.05em',
           color: '#000000',
           fontFamily: 'Georgia, serif',
@@ -37,14 +37,15 @@ export default function HeaderTest() {
       <button
         onClick={() => setIsMenuOpen(true)}
         style={{
-          fontSize: '24px',
+          fontSize: '20px',
           letterSpacing: '0.05em',
           color: '#000000',
           background: 'none',
           border: 'none',
           cursor: 'pointer',
           fontFamily: 'Georgia, serif',
-          transition: 'opacity 0.3s ease'
+          transition: 'opacity 0.3s ease',
+          padding: 0
         }}
         onMouseEnter={e => e.currentTarget.style.opacity = '0.7'}
         onMouseLeave={e => e.currentTarget.style.opacity = '1'}
@@ -58,10 +59,11 @@ export default function HeaderTest() {
         right: 0,
         width: '500px',
         height: '100%',
+        visibility: isMenuOpen ? 'visible' : 'hidden',
         transform: isMenuOpen ? 'translateX(0)' : 'translateX(100%)',
-        transition: 'transform 0.3s ease-in-out'
+        transition: 'transform 0.3s ease-in-out, visibility 0.3s ease-in-out'
       }}>
-        {isMenuOpen && <MenuTest onClose={() => setIsMenuOpen(false)} />}
+        <MenuTest onClose={() => setIsMenuOpen(false)} />
       </div>
     </header>
   );

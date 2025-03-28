@@ -24,14 +24,15 @@ export default function MenuTest({ onClose }: MenuTestProps) {
           position: 'absolute',
           top: '32px',
           right: '32px',
-          fontSize: '24px',
+          fontSize: '20px',
           letterSpacing: '0.05em',
           color: '#000000',
           background: 'none',
           border: 'none',
           cursor: 'pointer',
           fontFamily: 'Georgia, serif',
-          transition: 'opacity 0.3s ease'
+          transition: 'opacity 0.3s ease',
+          padding: 0
         }}
         onMouseEnter={e => e.currentTarget.style.opacity = '0.7'}
         onMouseLeave={e => e.currentTarget.style.opacity = '1'}
@@ -41,7 +42,7 @@ export default function MenuTest({ onClose }: MenuTestProps) {
 
       <nav style={{
         position: 'absolute',
-        top: '120px',
+        top: '140px',
         left: '32px'
       }}>
         {['Products', 'Prints', 'About'].map((item) => (
@@ -50,8 +51,8 @@ export default function MenuTest({ onClose }: MenuTestProps) {
             href={`/${item.toLowerCase()}`}
             style={{
               display: 'block',
-              fontSize: '48px',
-              marginBottom: '32px',
+              fontSize: '42px',
+              marginBottom: '24px',
               letterSpacing: '0.05em',
               color: '#000000',
               fontFamily: 'Georgia, serif',
@@ -78,7 +79,7 @@ export default function MenuTest({ onClose }: MenuTestProps) {
             width: '100%',
             background: 'transparent',
             borderBottom: '1px solid black',
-            fontSize: '24px',
+            fontSize: '20px',
             padding: '16px 0',
             outline: 'none',
             fontFamily: 'Georgia, serif',
@@ -91,10 +92,10 @@ export default function MenuTest({ onClose }: MenuTestProps) {
           style={{
             width: '100%',
             marginTop: '16px',
-            background: 'rgba(51, 51, 51, 0.7)',
+            background: 'rgba(51, 51, 51, 0.8)',
             color: 'white',
-            fontSize: '24px',
-            padding: '16px 0',
+            fontSize: '20px',
+            padding: '12px 0',
             fontFamily: 'Georgia, serif',
             border: 'none',
             cursor: 'pointer',
@@ -112,8 +113,8 @@ export default function MenuTest({ onClose }: MenuTestProps) {
             target="_blank"
             style={{
               display: 'block',
-              fontSize: '24px',
-              marginBottom: '24px',
+              fontSize: '20px',
+              marginBottom: '16px',
               color: '#000000',
               fontFamily: 'Georgia, serif',
               transition: 'opacity 0.3s ease'
@@ -128,8 +129,8 @@ export default function MenuTest({ onClose }: MenuTestProps) {
             target="_blank"
             style={{
               display: 'block',
-              fontSize: '24px',
-              marginBottom: '24px',
+              fontSize: '20px',
+              marginBottom: '16px',
               color: '#000000',
               fontFamily: 'Georgia, serif',
               transition: 'opacity 0.3s ease'
@@ -140,7 +141,7 @@ export default function MenuTest({ onClose }: MenuTestProps) {
             Instagram
           </Link>
           <div style={{
-            fontSize: '24px',
+            fontSize: '20px',
             color: '#666666',
             fontFamily: 'Georgia, serif'
           }}>
