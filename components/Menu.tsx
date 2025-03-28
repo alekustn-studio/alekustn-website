@@ -1,197 +1,161 @@
 "use client";
 
-import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { CSSProperties } from 'react';
 
 interface MenuProps {
-  isOpen: boolean;
   onClose: () => void;
+  isOpen: boolean;
 }
 
-export default function Menu({ isOpen, onClose }: MenuProps) {
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    }
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
-  }, [isOpen]);
-
-  const commonLinkStyles: CSSProperties = {
-    position: 'relative',
-    fontSize: '32px',
-    letterSpacing: '0.05em',
-    color: '#000000',
-    background: 'none',
-    border: 'none',
-    padding: 0,
-    cursor: 'pointer',
-    fontWeight: '400',
-    display: 'block',
-    marginBottom: '24px'
-  };
-
-  const bigLinkStyles: CSSProperties = {
-    ...commonLinkStyles,
-    fontSize: '60px',
-    marginBottom: '32px',
-    letterSpacing: '0.02em'
-  };
-
-  const handleSubscribe = async () => {
-    try {
-      const response = await fetch('/api/subscribe', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email }),
-      });
-
-      if (response.ok) {
-        setMessage('Thank you for subscribing!');
-        setEmail(''); // очищаем поле
-        // Убираем сообщение через 3 секунды
-        setTimeout(() => setMessage(''), 3000);
-      } else {
-        setMessage('Subscription error');
-        setTimeout(() => setMessage(''), 3000);
-      }
-    } catch (error) {
-      setMessage('Subscription error');
-      setTimeout(() => setMessage(''), 3000);
-    }
-  };
-
+export default function Menu({ onClose, isOpen }: MenuProps) {
   return (
-    <div 
-      style={{
-        transform: isOpen ? 'translateX(0)' : 'translateX(100%)',
-        transition: 'all 0.3s ease-in-out',
-        position: 'fixed',
-        top: 0,
-        right: 0,
-        bottom: 0,
-        width: '100%',
-        maxWidth: '600px',
-        backgroundColor: 'rgba(255, 255, 255, 0.65)',
-        backdropFilter: 'blur(5px)',
-        WebkitBackdropFilter: 'blur(5px)',
-        zIndex: 50,
-        opacity: isOpen ? 1 : 0,
-        pointerEvents: isOpen ? 'auto' : 'none'
-      }}
-    >
-      <div style={{ position: 'absolute', top: '32px', right: '32px' }}>
-        <button
-          onClick={onClose}
-          style={{
-            position: 'fixed',
-            top: '32px',
-            right: '32px',
-            fontSize: '32px',
-            letterSpacing: '0.05em',
-            color: '#000000',
-            fontFamily: 'Georgia, serif',
-            background: 'none',
-            border: 'none',
-            padding: 0,
-            cursor: 'pointer'
-          }}
-        >
-          Close
-        </button>
-      </div>
+    <div style={{
+      position: 'fixed',
+      top: 0,
+      right: 0,
+      width: '500px',
+      height: '100%',
+      backgroundColor: 'rgba(255, 255, 255, 0.7)',
+      backdropFilter: 'blur(8px)',
+      zIndex: 50,
+      visibility: isOpen ? 'visible' : 'hidden',
+      transform: isOpen ? 'translateX(0)' : 'translateX(100%)',
+      transition: 'transform 0.3s ease-in-out, visibility 0.3s ease-in-out'
+    }}>
+      <button
+        onClick={onClose}
+        style={{
+          position: 'absolute',
+          top: '34px',
+          right: '32px',
+          fontSize: '22px',
+          letterSpacing: '0.05em',
+          color: '#000000',
+          background: 'none',
+          border: 'none',
+          cursor: 'pointer',
+          fontFamily: 'Georgia, serif',
+          transition: 'opacity 0.3s ease',
+          padding: 0
+        }}
+        onMouseEnter={e => e.currentTarget.style.opacity = '0.7'}
+        onMouseLeave={e => e.currentTarget.style.opacity = '1'}
+      >
+        Close
+      </button>
 
-      <div style={{ position: 'absolute', top: '120px', left: '32px', right: '32px' }}>
-        <nav style={{ display: 'flex', flexDirection: 'column', maxWidth: '300px' }}>
-          <div style={{ marginTop: '60px' }}>
-            {['Products', 'Prints', 'About'].map((item) => (
-              <Link
-                key={item}
-                href={`/${item.toLowerCase()}`}
-                style={bigLinkStyles}
-                className="hover:opacity-70 transition-opacity no-underline"
-              >
-                {item}
-              </Link>
-            ))}
-          </div>
-        </nav>
-
-        <div style={{ marginTop: '32px' }}>
-          <input
-            type="email"
-            placeholder={message || "Enter your email"}
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            style={{
-              width: '100%',
-              padding: '16px 0',
-              border: 'none',
-              borderBottom: '1px solid black',
-              outline: 'none',
-              color: 'black',
-              fontSize: '24px',
-              fontFamily: 'inherit',
-              background: 'none'
-            }}
-          />
-          <button
-            onClick={handleSubscribe}
-            style={{
-              width: '100%',
-              marginTop: '16px',
-              padding: '16px 0',
-              backgroundColor: 'rgba(80, 80, 80, 0.95)',
-              color: 'white',
-              border: 'none',
-              fontSize: '24px',
-              cursor: 'pointer',
-              transition: 'opacity 0.2s ease-in-out',
-              fontFamily: 'inherit'
-            }}
-            className="hover:opacity-80"
-          >
-            Subscribe
-          </button>
-        </div>
-      </div>
-
-      {/* Социальные сети и копирайт внизу */}
-      <div style={{ 
-        position: 'fixed',
-        bottom: '32px',
-        left: '32px'
+      <nav style={{
+        position: 'absolute',
+        top: '140px',
+        left: '32px',
+        display: 'flex',
+        flexDirection: 'column',
+        maxWidth: '300px'
       }}>
-        <Link
-          href="https://x.com/ALEKUSTN"
-          style={commonLinkStyles}
-          className="hover:opacity-70 transition-opacity no-underline"
-          target="_blank"
+        <div style={{ marginTop: '60px' }}>
+          {['Products', 'Prints', 'About'].map((item) => (
+            <Link
+              key={item}
+              href={`/${item.toLowerCase()}`}
+              style={{
+                display: 'block',
+                fontSize: '42px',
+                marginBottom: '24px',
+                letterSpacing: '0.05em',
+                color: '#000000',
+                fontFamily: 'Georgia, serif',
+                transition: 'opacity 0.3s ease'
+              }}
+              onMouseEnter={e => e.currentTarget.style.opacity = '0.7'}
+              onMouseLeave={e => e.currentTarget.style.opacity = '1'}
+            >
+              {item}
+            </Link>
+          ))}
+        </div>
+      </nav>
+
+      <div style={{
+        position: 'absolute',
+        bottom: '32px',
+        left: '32px',
+        width: 'calc(100% - 64px)'
+      }}>
+        <input
+          type="email"
+          placeholder="Enter your email"
+          style={{
+            width: '100%',
+            background: 'transparent',
+            borderBottom: '1px solid black',
+            fontSize: '20px',
+            padding: '16px 0',
+            outline: 'none',
+            fontFamily: 'Georgia, serif',
+            borderTop: 'none',
+            borderLeft: 'none',
+            borderRight: 'none'
+          }}
+        />
+        <button
+          style={{
+            width: '100%',
+            marginTop: '16px',
+            background: 'rgba(51, 51, 51, 0.8)',
+            color: 'white',
+            fontSize: '20px',
+            padding: '12px 0',
+            fontFamily: 'Georgia, serif',
+            border: 'none',
+            cursor: 'pointer',
+            transition: 'opacity 0.3s ease'
+          }}
+          onMouseEnter={e => e.currentTarget.style.opacity = '0.7'}
+          onMouseLeave={e => e.currentTarget.style.opacity = '1'}
         >
-          Twitter
-        </Link>
-        <Link
-          href="https://www.instagram.com/alekustn"
-          style={commonLinkStyles}
-          className="hover:opacity-70 transition-opacity no-underline"
-          target="_blank"
-        >
-          Instagram
-        </Link>
-        <div style={{ 
-          marginTop: '32px',
-          fontSize: '32px',
-          color: '#444444',
-          opacity: 1
-        }}>
-          © ALEKUSTN - 2025
+          Subscribe
+        </button>
+
+        <div style={{ marginTop: '64px' }}>
+          <Link
+            href="https://x.com/ALEKUSTN"
+            target="_blank"
+            style={{
+              display: 'block',
+              fontSize: '20px',
+              marginBottom: '16px',
+              color: '#000000',
+              fontFamily: 'Georgia, serif',
+              transition: 'opacity 0.3s ease'
+            }}
+            onMouseEnter={e => e.currentTarget.style.opacity = '0.7'}
+            onMouseLeave={e => e.currentTarget.style.opacity = '1'}
+          >
+            Twitter
+          </Link>
+          <Link
+            href="https://www.instagram.com/alekustn"
+            target="_blank"
+            style={{
+              display: 'block',
+              fontSize: '20px',
+              marginBottom: '16px',
+              color: '#000000',
+              fontFamily: 'Georgia, serif',
+              transition: 'opacity 0.3s ease'
+            }}
+            onMouseEnter={e => e.currentTarget.style.opacity = '0.7'}
+            onMouseLeave={e => e.currentTarget.style.opacity = '1'}
+          >
+            Instagram
+          </Link>
+          <div style={{
+            fontSize: '20px',
+            color: '#666666',
+            fontFamily: 'Georgia, serif'
+          }}>
+            © ALEKUSTN - 2025
+          </div>
         </div>
       </div>
     </div>
