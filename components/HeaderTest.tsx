@@ -9,13 +9,13 @@ export default function HeaderTest() {
 
   return (
     <header className="fixed top-8 left-0 right-0 px-8 flex justify-between items-center bg-white z-[1000]">
-      <Link href="/" className="text-2xl font-['Georgia'] tracking-wide">
+      <Link href="/" className="text-xl font-['Georgia'] tracking-wide">
         ALEKUSTN
       </Link>
 
       <button
         onClick={() => setIsMenuOpen(true)}
-        className="text-2xl font-['Georgia'] tracking-wide"
+        className="text-xl font-['Georgia'] tracking-wide"
       >
         Menu
       </button>

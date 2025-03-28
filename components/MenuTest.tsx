@@ -11,7 +11,7 @@ export default function MenuTest({ onClose }: MenuTestProps) {
     <div className="fixed top-0 right-0 bottom-0 w-full max-w-[600px] bg-white/70 backdrop-blur-sm z-50">
       <button
         onClick={onClose}
-        className="absolute top-8 right-8 text-2xl font-['Georgia'] tracking-wide"
+        className="absolute top-8 right-8 text-xl font-['Georgia'] tracking-wide"
       >
         Close
       </button>
@@ -22,7 +22,7 @@ export default function MenuTest({ onClose }: MenuTestProps) {
             <Link
               key={item}
               href={`/${item.toLowerCase()}`}
-              className="text-5xl font-['Georgia'] tracking-wide"
+              className="text-4xl font-['Georgia'] tracking-wide"
             >
               {item}
             </Link>
