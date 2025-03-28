@@ -12,7 +12,7 @@ export default function MenuTest({ onClose }: MenuTestProps) {
       position: 'fixed',
       top: 0,
       right: 0,
-      width: '600px',
+      width: '500px',
       height: '100%',
       backgroundColor: 'rgba(255, 255, 255, 0.7)',
       backdropFilter: 'blur(8px)',
@@ -24,14 +24,17 @@ export default function MenuTest({ onClose }: MenuTestProps) {
           position: 'absolute',
           top: '32px',
           right: '32px',
-          fontSize: '16px',
+          fontSize: '24px',
           letterSpacing: '0.05em',
           color: '#000000',
           background: 'none',
           border: 'none',
           cursor: 'pointer',
-          fontFamily: 'Georgia, serif'
+          fontFamily: 'Georgia, serif',
+          transition: 'opacity 0.3s ease'
         }}
+        onMouseEnter={e => e.currentTarget.style.opacity = '0.7'}
+        onMouseLeave={e => e.currentTarget.style.opacity = '1'}
       >
         Close
       </button>
@@ -47,12 +50,15 @@ export default function MenuTest({ onClose }: MenuTestProps) {
             href={`/${item.toLowerCase()}`}
             style={{
               display: 'block',
-              fontSize: '32px',
+              fontSize: '48px',
               marginBottom: '32px',
               letterSpacing: '0.05em',
               color: '#000000',
-              fontFamily: 'Georgia, serif'
+              fontFamily: 'Georgia, serif',
+              transition: 'opacity 0.3s ease'
             }}
+            onMouseEnter={e => e.currentTarget.style.opacity = '0.7'}
+            onMouseLeave={e => e.currentTarget.style.opacity = '1'}
           >
             {item}
           </Link>
@@ -72,7 +78,7 @@ export default function MenuTest({ onClose }: MenuTestProps) {
             width: '100%',
             background: 'transparent',
             borderBottom: '1px solid black',
-            fontSize: '16px',
+            fontSize: '24px',
             padding: '16px 0',
             outline: 'none',
             fontFamily: 'Georgia, serif',
@@ -85,14 +91,17 @@ export default function MenuTest({ onClose }: MenuTestProps) {
           style={{
             width: '100%',
             marginTop: '16px',
-            background: '#333333',
+            background: 'rgba(51, 51, 51, 0.7)',
             color: 'white',
-            fontSize: '16px',
+            fontSize: '24px',
             padding: '16px 0',
             fontFamily: 'Georgia, serif',
             border: 'none',
-            cursor: 'pointer'
+            cursor: 'pointer',
+            transition: 'opacity 0.3s ease'
           }}
+          onMouseEnter={e => e.currentTarget.style.opacity = '0.7'}
+          onMouseLeave={e => e.currentTarget.style.opacity = '1'}
         >
           Subscribe
         </button>
@@ -103,11 +112,14 @@ export default function MenuTest({ onClose }: MenuTestProps) {
             target="_blank"
             style={{
               display: 'block',
-              fontSize: '16px',
+              fontSize: '24px',
               marginBottom: '24px',
               color: '#000000',
-              fontFamily: 'Georgia, serif'
+              fontFamily: 'Georgia, serif',
+              transition: 'opacity 0.3s ease'
             }}
+            onMouseEnter={e => e.currentTarget.style.opacity = '0.7'}
+            onMouseLeave={e => e.currentTarget.style.opacity = '1'}
           >
             Twitter
           </Link>
@@ -116,16 +128,19 @@ export default function MenuTest({ onClose }: MenuTestProps) {
             target="_blank"
             style={{
               display: 'block',
-              fontSize: '16px',
+              fontSize: '24px',
               marginBottom: '24px',
               color: '#000000',
-              fontFamily: 'Georgia, serif'
+              fontFamily: 'Georgia, serif',
+              transition: 'opacity 0.3s ease'
             }}
+            onMouseEnter={e => e.currentTarget.style.opacity = '0.7'}
+            onMouseLeave={e => e.currentTarget.style.opacity = '1'}
           >
             Instagram
           </Link>
           <div style={{
-            fontSize: '16px',
+            fontSize: '24px',
             color: '#666666',
             fontFamily: 'Georgia, serif'
           }}>

@@ -22,11 +22,14 @@ export default function HeaderTest() {
       <Link 
         href="/"
         style={{
-          fontSize: '16px',
+          fontSize: '24px',
           letterSpacing: '0.05em',
           color: '#000000',
-          fontFamily: 'Georgia, serif'
+          fontFamily: 'Georgia, serif',
+          transition: 'opacity 0.3s ease'
         }}
+        onMouseEnter={e => e.currentTarget.style.opacity = '0.7'}
+        onMouseLeave={e => e.currentTarget.style.opacity = '1'}
       >
         ALEKUSTN
       </Link>
@@ -34,14 +37,17 @@ export default function HeaderTest() {
       <button
         onClick={() => setIsMenuOpen(true)}
         style={{
-          fontSize: '16px',
+          fontSize: '24px',
           letterSpacing: '0.05em',
           color: '#000000',
           background: 'none',
           border: 'none',
           cursor: 'pointer',
-          fontFamily: 'Georgia, serif'
+          fontFamily: 'Georgia, serif',
+          transition: 'opacity 0.3s ease'
         }}
+        onMouseEnter={e => e.currentTarget.style.opacity = '0.7'}
+        onMouseLeave={e => e.currentTarget.style.opacity = '1'}
       >
         Menu
       </button>
@@ -50,7 +56,7 @@ export default function HeaderTest() {
         position: 'fixed',
         top: 0,
         right: 0,
-        width: '600px',
+        width: '500px',
         height: '100%',
         transform: isMenuOpen ? 'translateX(0)' : 'translateX(100%)',
         transition: 'transform 0.3s ease-in-out'
