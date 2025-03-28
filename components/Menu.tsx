@@ -72,7 +72,7 @@ export default function Menu({ onClose, isOpen }: MenuProps) {
 
       <div style={{
         position: 'absolute',
-        bottom: '100px',
+        bottom: '110px',
         left: '32px',
         width: 'calc(100% - 64px)'
       }}>
@@ -111,12 +111,7 @@ export default function Menu({ onClose, isOpen }: MenuProps) {
           Subscribe
         </button>
 
-        <div style={{ 
-          position: 'absolute',
-          bottom: '-140px',
-          left: 0,
-          width: '100%'
-        }}>
+        <div style={{ marginTop: '64px' }}>
           <Link
             href="https://x.com/ALEKUSTN"
             target="_blank"
