@@ -80,13 +80,11 @@ export default function CollectionTemplate({ data }: CollectionTemplateProps) {
             </div>
           </div>
 
-          <div style={{ ...metadataStyle, textAlign: 'right' }}>
-            <div>
-              <div style={labelStyle}>Links</div>
-              <a href={data.link} style={textStyle}>
-                opensea
-              </a>
-            </div>
+          <div style={{ textAlign: 'right' }}>
+            <div style={{ ...labelStyle, fontSize: '18px' }}>Links</div>
+            <a href={data.link} style={{ ...textStyle, fontSize: '18px' }}>
+              opensea
+            </a>
           </div>
         </div>
 
