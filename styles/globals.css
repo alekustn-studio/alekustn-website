@@ -48,6 +48,6 @@ body {
   }
   
   #mobileMenu .email-container {
-    bottom: 240px !important;  // в мобильной версии ниже
+    bottom: 240px !important;
   }
 } 
