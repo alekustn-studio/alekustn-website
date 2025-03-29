@@ -59,60 +59,56 @@ export default function CollectionGrid() {
   ];
 
   return (
-    <div style={{ paddingTop: '120px' }}>
-      <div 
-        style={{ 
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-          gap: '32px',
-          padding: '0 32px',
-          maxWidth: '1800px',
-          margin: '0 auto',
-          marginBottom: '120px'
-        }}
-        className="sm:px-32"
-      >
-        {/* Отображаем только коллекции */}
-        {collections.map((collection) => (
-          <Link
-            key={collection.id}
-            href={`/collection/${collection.id}`}
-            style={{ 
-              position: 'relative',
-              aspectRatio: '1',
-              width: '100%',
-              overflow: 'hidden',
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center'
+    <div 
+      className="collection-grid"
+      style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(6, 1fr)',
+        gap: '16px',
+        padding: '0 32px',
+        marginTop: '100px'
+      }}
+    >
+      {/* Отображаем только коллекции */}
+      {collections.map((collection) => (
+        <Link
+          key={collection.id}
+          href={`/collection/${collection.id}`}
+          style={{ 
+            position: 'relative',
+            aspectRatio: '1',
+            width: '100%',
+            overflow: 'hidden',
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}
+        >
+          <div
+            onMouseEnter={e => {
+              const img = e.currentTarget.querySelector('img');
+              if (img) img.style.transform = 'scale(0.98)';
+            }}
+            onMouseLeave={e => {
+              const img = e.currentTarget.querySelector('img');
+              if (img) img.style.transform = 'scale(1)';
             }}
           >
-            <div
-              onMouseEnter={e => {
-                const img = e.currentTarget.querySelector('img');
-                if (img) img.style.transform = 'scale(0.98)';
+            <img
+              src={collection.imagePath}
+              alt={`Collection ${collection.id}`}
+              style={{ 
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                objectPosition: 'center center',
+                transition: 'transform 0.2s ease-in-out'
               }}
-              onMouseLeave={e => {
-                const img = e.currentTarget.querySelector('img');
-                if (img) img.style.transform = 'scale(1)';
-              }}
-            >
-              <img
-                src={collection.imagePath}
-                alt={`Collection ${collection.id}`}
-                style={{ 
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover',
-                  objectPosition: 'center center',
-                  transition: 'transform 0.2s ease-in-out'
-                }}
-              />
-            </div>
-          </Link>
-        ))}
-      </div>
+            />
+          </div>
+        </Link>
+      ))}
     </div>
   );
 } 
