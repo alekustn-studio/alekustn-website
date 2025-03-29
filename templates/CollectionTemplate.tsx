@@ -56,7 +56,7 @@ export default function CollectionTemplate({ data }: CollectionTemplateProps) {
       <h1
         style={{
           fontFamily: 'var(--font-playfair)',
-          fontSize: '32px',
+          fontSize: '24px',
           color: '#000',
           fontWeight: '400',
           fontStyle: 'normal',
