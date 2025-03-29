@@ -1,11 +1,24 @@
 "use client";
 
 import Link from 'next/link';
-import { useState } from 'react';
-import Menu from '../components/Menu';
+import { useState, useEffect } from 'react';
+import Menu from './Menu';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      setIsHidden(currentScrollY > lastScrollY && currentScrollY > 50);
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
 
   return (
     <header style={{
@@ -14,10 +27,11 @@ export default function Header() {
       justifyContent: 'space-between',
       alignItems: 'center',
       position: 'fixed',
-      top: '32px',
+      top: isHidden ? '-100px' : '32px',
       left: '0',
       right: '0',
-      zIndex: 1000
+      zIndex: 1000,
+      transition: 'top 0.3s ease-in-out'
     }}>
       <Link 
         href="/"
