@@ -152,30 +152,26 @@ export default function About() {
                 />
               </div>
               
-              {isDesktop && (
-                <>
-                  <div style={{
-                    maxWidth: isDesktop ? '700px' : '800px',
-                    width: '100%',
-                  }}>
-                    <div style={{
-                      fontSize: isDesktop ? '18px' : '16px',
-                      lineHeight: '1.4',
-                    }}>
-                      <p style={{ margin: 0 }}>
-                        I see code not just as a tool, but as a language – one that speaks in patterns, rhythm, and controlled randomness.
-                      </p>
-                      <p style={{ margin: 0 }}>
-                        In generative art, there's no final brushstroke – only motion, variables, and choices.
-                      </p>
-                      <p style={{ margin: 0 }}>
-                        Each work becomes a dialogue between intention and accident.
-                      </p>
-                    </div>
-                  </div>
-                  <ThirdImage />
-                </>
-              )}
+              <div style={{
+                maxWidth: isDesktop ? '700px' : '800px',
+                width: '100%',
+              }}>
+                <div style={{
+                  fontSize: isDesktop ? '18px' : '16px',
+                  lineHeight: '1.4',
+                }}>
+                  <p style={{ margin: 0 }}>
+                    I see code not just as a tool, but as a language – one that
+                  </p>
+                  <p style={{ margin: 0 }}>
+                    In generative art, there's no final brushstroke – only moti
+                  </p>
+                  <p style={{ margin: 0 }}>
+                    Each work becomes a dialogue between intention and accident
+                  </p>
+                </div>
+              </div>
+              <ThirdImage />
             </div>
           </div>
 
