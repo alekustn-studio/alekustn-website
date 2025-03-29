@@ -81,7 +81,7 @@ export default function Prints() {
             textAlign: 'center',
           }}>
             <div style={{
-              fontSize: isDesktop ? '36px' : '28px',
+              fontSize: isDesktop ? '18px' : '16px',
               lineHeight: '1.3',
             }}>
               <p style={{ margin: '0 0 0.5em' }}>
@@ -134,7 +134,7 @@ export default function Prints() {
             marginBottom: '64px',
           }}>
             <div style={{
-              fontSize: isDesktop ? '36px' : '28px',
+              fontSize: isDesktop ? '18px' : '16px',
               lineHeight: '1.3',
             }}>
               <p style={{ margin: '0 0 0.5em' }}>
