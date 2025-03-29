@@ -119,7 +119,7 @@ export default function Menu({ onClose, isOpen }: MenuProps) {
         bottom: '32px',
         left: '32px',
         width: 'calc(100% - 64px)'
-      }}>
+      }} className="menu-buttons">
         <Link
           href="https://x.com/ALEKUSTN"
           target="_blank"

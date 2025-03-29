@@ -40,4 +40,10 @@ body {
 .text-menu {
   font-size: 32px;
   letter-spacing: 0.05em;
+}
+
+@media (max-width: 768px) {
+  #mobileMenu .menu-buttons {
+    margin-left: 32px;
+  }
 } 
