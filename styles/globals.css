@@ -53,6 +53,9 @@ body {
   border-bottom: 1px solid #000;
   background: transparent;
   padding: 8px 0;
+  border-radius: 0;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 @media (max-width: 768px) {
@@ -62,5 +65,16 @@ body {
   
   #mobileMenu .email-container {
     bottom: 200px !important;
+  }
+
+  /* Более специфичные стили для мобильной версии */
+  #mobileMenu .email-input {
+    background-color: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid #000 !important;
+    border-radius: 0 !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    box-shadow: none !important;
   }
 } 
