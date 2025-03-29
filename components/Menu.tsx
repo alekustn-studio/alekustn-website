@@ -84,17 +84,13 @@ export default function Menu({ onClose, isOpen }: MenuProps) {
         <input
           type="email"
           placeholder="Enter your email"
+          className="email-input"
           style={{
             width: '100%',
-            background: 'transparent',
-            borderBottom: '1px solid black',
-            fontSize: '18px',
-            padding: '16px 0',
-            outline: 'none',
-            fontFamily: 'Georgia, serif',
-            borderTop: 'none',
-            borderLeft: 'none',
-            borderRight: 'none'
+            fontSize: '20px',
+            marginBottom: '16px',
+            color: '#000000',
+            fontFamily: 'Georgia, serif'
           }}
         />
         <button

@@ -50,4 +50,13 @@ body {
   #mobileMenu .email-container {
     bottom: 200px !important;
   }
+
+  /* Стили для input в мобильной версии */
+  #mobileMenu .email-input {
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid #000 !important;
+    border-radius: 0 !important;
+    padding: 8px 0 !important;
+  }
 } 
