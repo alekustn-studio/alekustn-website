@@ -44,7 +44,7 @@ body {
 
 @media (max-width: 768px) {
   #mobileMenu {
-    width: 100% !important;
+    width: 225px !important;
   }
   
   #mobileMenu .menu-buttons {
