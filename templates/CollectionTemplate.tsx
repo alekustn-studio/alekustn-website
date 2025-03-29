@@ -69,13 +69,15 @@ export default function CollectionTemplate({ data }: CollectionTemplateProps) {
       <div style={containerStyle}>
         <div style={metadataStyle}>
           <div>
-            <div style={labelStyle}>Year</div>
-            <div style={textStyle}>{data.year}</div>
+            <div style={{ ...labelStyle, fontSize: '18px' }}>Year</div>
+            <div style={{ ...textStyle, fontSize: '18px' }}>{data.year}</div>
           </div>
 
           <div style={{ textAlign: 'center' }}>
-            <div style={labelStyle}>Iterations</div>
-            <div style={textStyle}>{data.iterations}</div>
+            <div style={{ ...labelStyle, fontSize: '18px' }}>Iterations</div>
+            <div style={{ ...textStyle, fontSize: '18px' }}>
+              {data.iterations}
+            </div>
           </div>
 
           {data.platform && data.link && (
@@ -94,18 +96,16 @@ export default function CollectionTemplate({ data }: CollectionTemplateProps) {
         </div>
 
         <div style={descriptionStyle}>
-          {data.description.split('\n\n').map((paragraph, index) => (
-            <p
-              key={index}
-              style={{
-                ...textStyle,
-                marginBottom: '24px',
-                lineHeight: '1.4',
-              }}
-            >
-              {paragraph}
-            </p>
-          ))}
+          <p
+            style={{
+              fontFamily: 'var(--font-playfair)',
+              fontSize: '18px',
+              lineHeight: '1.5',
+              marginBottom: '32px',
+            }}
+          >
+            {data.description}
+          </p>
         </div>
       </div>
 
