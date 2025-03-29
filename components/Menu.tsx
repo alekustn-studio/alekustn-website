@@ -115,6 +115,7 @@ export default function Menu({ onClose, isOpen }: MenuProps) {
         <Link
           href="https://x.com/ALEKUSTN"
           target="_blank"
+          onClick={onClose}
           style={{
             display: 'block',
             fontSize: '20px',
@@ -129,12 +130,13 @@ export default function Menu({ onClose, isOpen }: MenuProps) {
           Twitter
         </Link>
         <Link
-          href="https://www.instagram.com/alekustn"
+          href="https://instagram.com/ALEKUSTN"
           target="_blank"
+          onClick={onClose}
           style={{
             display: 'block',
             fontSize: '20px',
-            marginBottom: '16px',
+            marginBottom: '32px',
             color: '#000000',
             fontFamily: 'Georgia, serif',
             transition: 'opacity 0.3s ease'
