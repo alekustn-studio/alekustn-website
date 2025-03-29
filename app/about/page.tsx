@@ -171,7 +171,7 @@ export default function About() {
                   </p>
                 </div>
               </div>
-              <ThirdImage />
+              {isDesktop && <ThirdImage />}
             </div>
           </div>
 
