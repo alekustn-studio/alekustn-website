@@ -56,7 +56,7 @@ export default function CollectionTemplate({ data }: CollectionTemplateProps) {
       <h1
         style={{
           fontFamily: 'var(--font-playfair)',
-          fontSize: '16px',
+          fontSize: '24px',
           color: '#000',
           fontWeight: '400',
           fontStyle: 'normal',
@@ -80,19 +80,12 @@ export default function CollectionTemplate({ data }: CollectionTemplateProps) {
             </div>
           </div>
 
-          {data.platform && data.link && (
-            <div style={{ textAlign: 'right' }}>
-              <div style={labelStyle}>Links</div>
-              <CollectionLink
-                href={data.link}
-                platform={data.platform}
-                style={{
-                  ...textStyle,
-                  textDecoration: 'underline',
-                }}
-              />
-            </div>
-          )}
+          <div>
+            <div style={{ ...labelStyle, fontSize: '18px' }}>Links</div>
+            <a href={data.link} style={{ ...textStyle, fontSize: '18px' }}>
+              opensea
+            </a>
+          </div>
         </div>
 
         <div style={descriptionStyle}>
