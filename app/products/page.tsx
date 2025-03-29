@@ -41,13 +41,13 @@ export default function Products() {
           Coming soon
         </h1>
         <p style={{
-          fontSize: isDesktop ? '18px' : '16px',
+          fontSize: '16px',
           marginBottom: '8px'
         }}>
           A collection of digital tools and ideas.
         </p>
         <p style={{
-          fontSize: isDesktop ? '18px' : '16px'
+          fontSize: '16px'
         }}>
           This space is still in progress – more to come.
         </p>
