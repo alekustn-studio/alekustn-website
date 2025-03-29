@@ -42,6 +42,19 @@ body {
   letter-spacing: 0.05em;
 }
 
+/* Базовые стили для email input */
+#mobileMenu .email-input {
+  width: 100%;
+  font-size: 20px;
+  margin-bottom: 16px;
+  color: #000000;
+  font-family: Georgia, serif;
+  border: none;
+  border-bottom: 1px solid #000;
+  background: transparent;
+  padding: 8px 0;
+}
+
 @media (max-width: 768px) {
   #mobileMenu {
     width: 100% !important;
@@ -49,14 +62,5 @@ body {
   
   #mobileMenu .email-container {
     bottom: 200px !important;
-  }
-
-  /* Стили для input в мобильной версии */
-  #mobileMenu .email-input {
-    background: transparent !important;
-    border: none !important;
-    border-bottom: 1px solid #000 !important;
-    border-radius: 0 !important;
-    padding: 8px 0 !important;
   }
 } 
