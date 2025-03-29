@@ -95,6 +95,7 @@ export default function CollectionTemplate({ data }: CollectionTemplateProps) {
               fontSize: '18px',
               lineHeight: '1.5',
               marginBottom: '32px',
+              whiteSpace: 'pre-wrap',
             }}
           >
             {data.description}
