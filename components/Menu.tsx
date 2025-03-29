@@ -77,7 +77,7 @@ export default function Menu({ onClose, isOpen }: MenuProps) {
         bottom: '280px',
         left: '32px',
         width: 'calc(100% - 64px)'
-      }}>
+      }} className="menu-buttons">
         <input
           type="email"
           placeholder="Enter your email"

@@ -43,7 +43,12 @@ body {
 }
 
 @media (max-width: 768px) {
+  #mobileMenu {
+    width: 100% !important;
+  }
+  
   #mobileMenu .menu-buttons {
-    margin-left: 32px;
+    width: calc(100% - 64px) !important;
+    left: 32px !important;
   }
 } 
