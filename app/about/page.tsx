@@ -38,7 +38,7 @@ export default function About() {
 
   const ThirdText = () => (
     <div style={{
-      maxWidth: isDesktop ? '700px' : '800px',
+      maxWidth: '700px',
       width: '100%',
     }}>
       <div style={{
@@ -97,6 +97,7 @@ export default function About() {
             flexDirection: isDesktop ? 'row' : 'column',
             gap: isDesktop ? '80px' : '64px',
             alignItems: isDesktop ? 'flex-start' : 'center',
+            paddingLeft: isDesktop ? '80px' : '0',
           }}>
             <div style={{
               display: 'flex',
