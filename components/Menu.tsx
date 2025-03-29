@@ -17,10 +17,12 @@ export default function Menu({ onClose, isOpen }: MenuProps) {
       height: '100%',
       backgroundColor: 'rgba(255, 255, 255, 0.7)',
       backdropFilter: 'blur(8px)',
+      WebkitBackdropFilter: 'blur(8px)',
       zIndex: 50,
       visibility: isOpen ? 'visible' : 'hidden',
       transform: isOpen ? 'translateX(0)' : 'translateX(100%)',
-      transition: 'transform 0.3s ease-in-out, visibility 0.3s ease-in-out'
+      transition: 'transform 0.3s ease-in-out, visibility 0.3s ease-in-out',
+      overflowX: 'hidden'
     }}>
       <button
         onClick={onClose}
