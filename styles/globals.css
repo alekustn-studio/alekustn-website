@@ -44,11 +44,10 @@ body {
 
 @media (max-width: 768px) {
   #mobileMenu {
-    width: 225px !important;
+    width: 100% !important;
   }
   
-  #mobileMenu .menu-buttons {
-    width: calc(100% - 64px) !important;
-    left: 32px !important;
+  #mobileMenu .email-container {
+    bottom: 240px !important;  // в мобильной версии ниже
   }
 } 

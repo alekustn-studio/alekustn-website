@@ -72,12 +72,15 @@ export default function Menu({ onClose, isOpen }: MenuProps) {
         ))}
       </nav>
 
-      <div style={{
-        position: 'absolute',
-        bottom: '280px',
-        left: '32px',
-        width: 'calc(100% - 64px)'
-      }} className="menu-buttons">
+      <div 
+        className="email-container"
+        style={{
+          position: 'absolute',
+          bottom: '280px',
+          left: '32px',
+          width: 'calc(100% - 64px)'
+        }}
+      >
         <input
           type="email"
           placeholder="Enter your email"
