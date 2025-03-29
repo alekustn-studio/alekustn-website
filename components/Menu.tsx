@@ -51,25 +51,54 @@ export default function Menu({ onClose, isOpen }: MenuProps) {
         top: '100px',
         left: '32px'
       }}>
-        {['Products', 'Prints', 'About'].map((item) => (
-          <Link
-            key={item}
-            href={`/${item.toLowerCase()}`}
-            style={{
-              display: 'block',
-              fontSize: '42px',
-              marginBottom: '24px',
-              letterSpacing: '0.05em',
-              color: '#000000',
-              fontFamily: 'Georgia, serif',
-              transition: 'opacity 0.3s ease'
-            }}
-            onMouseEnter={e => e.currentTarget.style.opacity = '0.7'}
-            onMouseLeave={e => e.currentTarget.style.opacity = '1'}
-          >
-            {item}
-          </Link>
-        ))}
+        <Link 
+          href="/products"
+          onClick={onClose}
+          style={{
+            display: 'block',
+            fontSize: '40px',
+            marginBottom: '16px',
+            color: '#000000',
+            fontFamily: 'Georgia, serif',
+            transition: 'opacity 0.3s ease'
+          }}
+          onMouseEnter={e => e.currentTarget.style.opacity = '0.7'}
+          onMouseLeave={e => e.currentTarget.style.opacity = '1'}
+        >
+          Products
+        </Link>
+        <Link 
+          href="/prints"
+          onClick={onClose}
+          style={{
+            display: 'block',
+            fontSize: '40px',
+            marginBottom: '16px',
+            color: '#000000',
+            fontFamily: 'Georgia, serif',
+            transition: 'opacity 0.3s ease'
+          }}
+          onMouseEnter={e => e.currentTarget.style.opacity = '0.7'}
+          onMouseLeave={e => e.currentTarget.style.opacity = '1'}
+        >
+          Prints
+        </Link>
+        <Link 
+          href="/about"
+          onClick={onClose}
+          style={{
+            display: 'block',
+            fontSize: '40px',
+            marginBottom: '16px',
+            color: '#000000',
+            fontFamily: 'Georgia, serif',
+            transition: 'opacity 0.3s ease'
+          }}
+          onMouseEnter={e => e.currentTarget.style.opacity = '0.7'}
+          onMouseLeave={e => e.currentTarget.style.opacity = '1'}
+        >
+          About
+        </Link>
       </nav>
 
       <div 
