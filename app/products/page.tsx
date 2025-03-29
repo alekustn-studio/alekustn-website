@@ -11,13 +11,15 @@ export default function Products() {
   const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
-    const checkIfDesktop = () => {
-      setIsDesktop(window.innerWidth >= 1024);
-    };
+    if (typeof window !== 'undefined') {
+      const checkIfDesktop = () => {
+        setIsDesktop(window.innerWidth >= 1024);
+      };
 
-    checkIfDesktop();
-    window.addEventListener('resize', checkIfDesktop);
-    return () => window.removeEventListener('resize', checkIfDesktop);
+      checkIfDesktop();
+      window.addEventListener('resize', checkIfDesktop);
+      return () => window.removeEventListener('resize', checkIfDesktop);
+    }
   }, []);
 
   return (
