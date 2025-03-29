@@ -9,7 +9,7 @@ interface MenuProps {
 
 export default function Menu({ onClose, isOpen }: MenuProps) {
   return (
-    <div style={{
+    <div id="mobileMenu" style={{
       position: 'fixed',
       top: 0,
       right: 0,
