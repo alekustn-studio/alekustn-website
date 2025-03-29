@@ -63,7 +63,7 @@ export default function CollectionGrid() {
       className="collection-grid"
       style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(6, 1fr)',
+        gridTemplateColumns: 'repeat(5, 1fr)',
         gap: '16px',
         padding: '0 32px',
         marginTop: '100px'
