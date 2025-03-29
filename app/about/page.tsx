@@ -42,7 +42,7 @@ export default function About() {
       width: '100%',
     }}>
       <div style={{
-        fontSize: isDesktop ? '36px' : '28px',
+        fontSize: isDesktop ? '18px' : '16px',
         lineHeight: '1.4',
       }}>
         <p style={{ margin: 0 }}>
@@ -106,11 +106,11 @@ export default function About() {
               width: '100%',
             }}>
               <div style={{
-                fontSize: isDesktop ? '36px' : '28px',
+                fontSize: isDesktop ? '18px' : '16px',
                 lineHeight: '1.4',
               }}>
                 <p style={{ margin: 0 }}>
-                  My name is Aleksei Ustinov — I'm a generative artist and photographer, exploring the intersection of code, form, and emotion.
+                  My name is Aleksei Ustinov – I'm a generative artist and photographer, exploring the intersection of code, form, and emotion.
                 </p>
                 <p style={{ margin: 0 }}>
                   My work blends structure and spontaneity — from algorithmic visuals and photography inspired by nature to digital tools and automation.
@@ -158,14 +158,14 @@ export default function About() {
                     width: '100%',
                   }}>
                     <div style={{
-                      fontSize: isDesktop ? '36px' : '28px',
+                      fontSize: isDesktop ? '18px' : '16px',
                       lineHeight: '1.4',
                     }}>
                       <p style={{ margin: 0 }}>
-                        I see code not just as a tool, but as a language — one that speaks in patterns, rhythm, and controlled randomness.
+                        I see code not just as a tool, but as a language – one that speaks in patterns, rhythm, and controlled randomness.
                       </p>
                       <p style={{ margin: 0 }}>
-                        In generative art, there's no final brushstroke — only motion, variables, and choices.
+                        In generative art, there's no final brushstroke – only motion, variables, and choices.
                       </p>
                       <p style={{ margin: 0 }}>
                         Each work becomes a dialogue between intention and accident.
@@ -177,28 +177,6 @@ export default function About() {
               )}
             </div>
           </div>
-
-          {!isDesktop && (
-            <div style={{
-              maxWidth: '800px',
-              width: '100%',
-            }}>
-              <div style={{
-                fontSize: '28px',
-                lineHeight: '1.4',
-              }}>
-                <p style={{ margin: 0 }}>
-                  I see code not just as a tool, but as a language — one that speaks in patterns, rhythm, and controlled randomness.
-                </p>
-                <p style={{ margin: 0 }}>
-                  In generative art, there's no final brushstroke — only motion, variables, and choices.
-                </p>
-                <p style={{ margin: 0 }}>
-                  Each work becomes a dialogue between intention and accident.
-                </p>
-              </div>
-            </div>
-          )}
 
           {!isDesktop && <SecondImage />}
 
