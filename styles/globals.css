@@ -83,3 +83,9 @@ body {
     grid-template-columns: repeat(2, 1fr) !important;  /* 2 коллекции в строке для мобилки */
   }
 } 
+
+/* Убираем подчеркивание для всех ссылок в хедере и меню */
+#mobileMenu a,
+header a {
+  text-decoration: none;
+} 
