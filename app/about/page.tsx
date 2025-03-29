@@ -153,52 +153,24 @@ export default function About() {
       }}>
         <div style={{
           display: 'flex',
-          flexDirection: 'column',
-          gap: '32px',
+          flexDirection: isDesktop ? 'row' : 'column',
+          gap: isDesktop ? '80px' : '64px',
+          alignItems: isDesktop ? 'flex-start' : 'center',
+          paddingLeft: isDesktop ? '40px' : '0',
         }}>
-          {isDesktop ? (
-            <>
-              <div style={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '32px',
-                maxWidth: '600px',
-                width: '100%',
-              }}>
-                <FirstText />
-                <FirstImage />
-              </div>
+          {/* Первая колонка с текстами */}
+          <div>
+            <div style={{ order: isDesktop ? 0 : 1 }}><FirstText /></div>
+            <div style={{ order: isDesktop ? 0 : 3 }}><SecondText /></div>
+            <div style={{ order: isDesktop ? 0 : 5 }}><ThirdText /></div>
+          </div>
 
-              <div style={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '32px',
-                width: '100%',
-              }}>
-                <SecondText />
-                <SecondImage />
-              </div>
-
-              <div style={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '32px',
-                width: '100%',
-              }}>
-                <ThirdText />
-                <ThirdImage />
-              </div>
-            </>
-          ) : (
-            <>
-              <FirstText />
-              <FirstImage />
-              <SecondText />
-              <SecondImage />
-              <ThirdText />
-              <ThirdImage />
-            </>
-          )}
+          {/* Вторая колонка с изображениями */}
+          <div>
+            <div style={{ order: isDesktop ? 0 : 2 }}><FirstImage /></div>
+            <div style={{ order: isDesktop ? 0 : 4 }}><SecondImage /></div>
+            <div style={{ order: isDesktop ? 0 : 6 }}><ThirdImage /></div>
+          </div>
         </div>
       </div>
     </PageLayout>
